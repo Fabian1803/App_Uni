@@ -21,6 +21,7 @@
         app:srcCompat="@mipmap/user" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -28,7 +29,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewCareer"
         android:layout_width="267dp"
         android:layout_height="wrap_content"
         android:text="Ingieneria de Software" />

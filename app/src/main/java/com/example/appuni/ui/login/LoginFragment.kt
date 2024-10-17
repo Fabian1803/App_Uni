@@ -7,19 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.appuni.MainActivity
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.appuni.R
+import com.example.appuni.data.bd.AppDatabase
+import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
-
-    // Credenciales estáticas (en una aplicación real, obtendrás esto de un servidor)
-    private val validUsername = "u20227896"
-    private val validPassword = "123456"
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +29,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        (activity as AppCompatActivity).supportActionBar?.hide()
         // Obtener referencias a los campos de entrada, el botón y el TextView
         val usernameEditText: EditText = view.findViewById(R.id.editTextText)
         val passwordEditText: EditText = view.findViewById(R.id.editTextTextPassword)
@@ -43,12 +43,21 @@ class LoginFragment : Fragment() {
             val password = passwordEditText.text.toString()
 
             // Validar credenciales
-            if (username == validUsername && password == validPassword) {
-                // Credenciales válidas, redirigir al usuario
-                findNavController().navigate(R.id.nav_home) // Cambia a tu destino deseado
-            } else {
-                // Credenciales inválidas, mostrar mensaje de error
-                Toast.makeText(context, "Credenciales inválidas", Toast.LENGTH_SHORT).show()
+            lifecycleScope.launch {
+                val db = AppDatabase.getDatabase(requireContext())
+                val student = db.studentDao().getStudentByCredentials(username, password)
+
+                if (student != null) {
+                    // Credenciales válidas, actualizar el encabezado en MainActivity
+                    val mainActivity = activity as MainActivity
+                    mainActivity.updateHeader(student.firstName, student.lastName, student.career)
+
+                    // Navegar a la pantalla de inicio
+                    findNavController().navigate(R.id.nav_home)
+                } else {
+                    // Credenciales inválidas, mostrar mensaje de error
+                    Toast.makeText(context, "Credenciales inválidas", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

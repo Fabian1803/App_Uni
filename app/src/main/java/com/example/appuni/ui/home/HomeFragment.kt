@@ -1,9 +1,12 @@
 package com.example.appuni.ui.home
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -26,13 +29,21 @@ class HomeFragment : Fragment() {
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        // Inicializar el Spinner
+        val spinner: Spinner = binding.spinner
+
+        // Crear una lista de opciones para el Spinner
+        val options = listOf("Periodo Actual", "Otros")
+
+        // Crear un adaptador para el Spinner
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, options)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // Configurar el Spinner con el adaptador
+        spinner.adapter = adapter
+
+        return binding.root
     }
 
     override fun onDestroyView() {

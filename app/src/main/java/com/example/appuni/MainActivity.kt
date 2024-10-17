@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
+import android.widget.TextView
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var nameTextView: TextView
+    private lateinit var careerTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // Obtener referencias a los TextViews del encabezado
+        val headerView = navView.getHeaderView(0)
+        nameTextView = headerView.findViewById(R.id.textView)
+        careerTextView = headerView.findViewById(R.id.textViewCareer)
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.loginFragment) {
                 binding.appBarMain.toolbar.visibility = View.GONE
@@ -47,7 +56,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    fun updateHeader(userName: String, lastName: String, userCareer: String) {
+        nameTextView.text = "$userName $lastName"
+        careerTextView.text = userCareer
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)

@@ -7,16 +7,198 @@
     tools:context=".ui.slideshow.SlideshowFragment">
 
     <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:text="Ayuda"
+        android:textColor="#1C2E63"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_left"
+        app:layout_constraintVertical_bias="0.095"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Manual del estudiante USC"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:text="Manual del estudiante USC"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_left"
+        app:layout_constraintVertical_bias="0.18">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Talleres culturales y deportivos"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:text="Accede a las grabaciones de los talleres"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_left"
+        app:layout_constraintVertical_bias="0.27">
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Videos tutoriales / Estudiante"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:text="Mira vídeos tutoriales y conoce más de las funcionalidades que te ofrece USC"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_left"
+        app:layout_constraintVertical_bias="0.386">
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="[Video] inducción lataforma ara estudiantes de USC"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:text="Charla informativa estudiantes USC"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/border_left"
+        app:layout_constraintVertical_bias="0.485">
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Tips para los Cursos Virtuales 24/7"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:text="Tips para los Cursos Virtuales 24/7"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
