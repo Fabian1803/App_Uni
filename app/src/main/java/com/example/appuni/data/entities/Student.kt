@@ -1,11 +1,7 @@
 package com.example.appuni.data.entities
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "student")
-data class StudentEntity(
-    @PrimaryKey(autoGenerate = true) val idStudent: Long = 0,
+data class Student(
+    val id: Long,
     val firstName: String,
     val lastName: String,
     val email: String,

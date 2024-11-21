@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chat.search_user"
+    android:padding="16dp"
+    android:background="#4D1C2E63">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/rounded_corners"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nuevo Mensaje" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Seleccione un estudiante" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Buscar un contacto que pertenezca  a USC" />
+
+                <EditText
+                    android:id="@+id/editTextText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:paddingRight="12dp"
+                    android:paddingLeft="12dp"
+                    android:ems="10"
+                    android:background="@drawable/borde_celeste"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:inputType="text"
+                    android:hint="Buscar por nombre" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/resultContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

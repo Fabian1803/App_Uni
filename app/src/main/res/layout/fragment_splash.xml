@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C2E63"
+    android:background="#032F64"
     android:theme="@style/ThemeOverlay.AppUni.FullscreenContainer"
     tools:context=".ui.SplashScreen.Splash" >
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="251dp"
-        android:layout_height="260dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth="5"
         android:src="@mipmap/sideral"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

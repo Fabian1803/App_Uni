@@ -16,4 +16,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="manual">Manual del estudiante USC\nManual del estudiante USC</string>
+    <string name="ns_text">Una vez que empiece a escribir, los\nresultados de búsqueda aparecerán aquí</string>
+    <string name="title_activity_course_fragment">CourseFragment</string>
+    <string name="title_activity_password_recovery">PasswordRecovery</string>
+    <string name="subraaydo"><u>Ver sílabo</u></string>
+    <string name="title_activity_code_verify">CodeVerify</string>
 </resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="170dp">
+
+    <ImageView
+        android:id="@+id/imageNS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ns_img"/>
+
+    <TextView
+        android:id="@+id/ns_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar contacto"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1C2E63"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/ns_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ns_text"
+        android:textSize="15sp"
+        android:textColor="#1C2E63"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="8dp"/>
+</LinearLayout>

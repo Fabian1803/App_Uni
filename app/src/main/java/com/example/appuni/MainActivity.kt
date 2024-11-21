@@ -37,7 +37,11 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_chat
+                R.id.nav_home,
+                R.id.nav_gallery,
+                R.id.nav_slideshow,
+                R.id.nav_chat,
+                R.id.searchUserFragment
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -55,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                 binding.appBarMain.toolbar.visibility = View.VISIBLE
             }
         }
+
     }
     fun updateHeader(userName: String, lastName: String, userCareer: String) {
         nameTextView.text = "$userName $lastName"

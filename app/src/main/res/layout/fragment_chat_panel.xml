@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chat.ChatPanel"
+    android:padding="16dp"
+    android:background="#4D1C2E63">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.17"
+            android:padding="15dp"
+            android:background="@drawable/rounded_corners"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="80dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/user" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Nombre de usuario" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.72"
+            android:background="#54A19BA5"
+            android:orientation="horizontal">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/messagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+
+
+                    <!-- aqui ira receiver_text.xml o trasmitter_text.xml-->
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.11"
+            android:background="@drawable/rounded_corners"
+            android:padding="15dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editTextText3"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:paddingLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="Escribir Mensaje"
+                android:background="@drawable/rounded_corners"
+                android:inputType="text"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Enviar"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

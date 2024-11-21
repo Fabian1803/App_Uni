@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="32.0"
+    android:viewportHeight="32.0">
+
+    <!-- Rectángulo -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M2,11h8a1,1 0 0,1 1,1v9a1,1 0 0,1 -1,1h-8a1,1 0 0,1 -1,-1V12a1,1 0 0,1 1,-1z"/>
+
+    <!-- Camino (formas más complejas) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M16,28a.93.93,0,0,1-.32,0L9.74,26a1,1,0,0,1-.65-1.22L10,21.35a1,1,0,0,1,1.25-.69l6.29,1.87a1,1,0,0,1,.61.51,1,1,0,0,1,0,.8l-1.29,3.48A1,1,0,0,1,16,28Zm-4.73-3.62l4.13,1.37L16,24.14l-4.29-1.28z"/>
+
+    <!-- Camino inferior (base) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M29.58,4.22a1,1 0 0,0 -.91,-.13l-20,7a1,1 0 0,0 -1,-.22v9a1,1 0 0,0 .71,1l20,5.95a1,1 0 0,0 .29,0a1,1 0 0,0 1,-1V5a1,1 0 0,0 -1,-.78z"/>
+
+</vector>

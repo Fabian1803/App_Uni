@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4D1C2E63"
     tools:context=".ui.chat.ChatFragment">
 
     <TextView
@@ -31,13 +32,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCreate"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
         android:text="+ Crear"
         android:textColor="#3B5FCA"
+        android:background="#00000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toEndOf="@+id/textView8"

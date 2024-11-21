@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318833685349",
+    "project_id": "appuni-10aec",
+    "storage_bucket": "appuni-10aec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318833685349:android:b0f3d84c18b7cd0a5ce78c",
+        "android_client_info": {
+          "package_name": "com.example.appuni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe7uo__8xEfABKroXVbxc_IXFQqHk51-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

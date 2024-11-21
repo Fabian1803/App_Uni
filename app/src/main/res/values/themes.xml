@@ -22,6 +22,7 @@
     <style name="Theme.AppUni.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AppUni.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="ThemeOverlay.AppUni.FullscreenContainer" parent="">
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>

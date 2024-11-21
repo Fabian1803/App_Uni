@@ -13,13 +13,22 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.appuni.R
-import com.example.appuni.data.bd.AppDatabase
+import com.example.appuni.data.Retrofit.RetrofitClient
+import com.example.appuni.data.entities.Student
+import com.example.appuni.ui.SharedViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginFragment : Fragment() {
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,30 +51,46 @@ class LoginFragment : Fragment() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            // Validar credenciales
-            lifecycleScope.launch {
-                val db = AppDatabase.getDatabase(requireContext())
-                val student = db.studentDao().getStudentByCredentials(username, password)
+            // Llamada a la API para autenticar
+            authenticateStudent(username, password)
 
-                if (student != null) {
-                    // Credenciales válidas, actualizar el encabezado en MainActivity
-                    val mainActivity = activity as MainActivity
-                    mainActivity.updateHeader(student.firstName, student.lastName, student.career)
-
-                    // Navegar a la pantalla de inicio
-                    findNavController().navigate(R.id.nav_home)
-                } else {
-                    // Credenciales inválidas, mostrar mensaje de error
-                    Toast.makeText(context, "Credenciales inválidas", Toast.LENGTH_SHORT).show()
-                }
-            }
         }
 
         // Configurar el TextView para redirigir a un enlace
         recoverAccountTextView.setOnClickListener {
-            // Crear un Intent para abrir el navegador
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://universidadsideralcarrion.com/Ayuda"))
-            startActivity(intent)
+            val navController = findNavController()
+            navController.navigate(R.id.passwordRecovery)
+        }
+    }
+    private fun authenticateStudent(code: String, password: String) {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val call = RetrofitClient.apiService.authenticateStudent(code, password)
+            call.enqueue(object : Callback<Student> {
+                override fun onResponse(call: Call<Student>, response: Response<Student>) {
+                    if (response.isSuccessful) {
+                        val student = response.body()
+                        if (student != null) {
+                            // Actualiza el studentId en el ViewModel compartido
+                            sharedViewModel.studentId.postValue(student.id)
+
+                            // Credenciales válidas, actualizar el encabezado en MainActivity
+                            val mainActivity = activity as MainActivity
+                            mainActivity.updateHeader(student.firstName, student.lastName, student.career)
+
+                            // Navegar a la pantalla de inicio
+                            findNavController().navigate(R.id.nav_home)
+                        } else {
+                            Toast.makeText(context, "Credenciales inválidas", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(context, "Credenciales inválidas", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Student>, t: Throwable) {
+                    Toast.makeText(context, "Error de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 }

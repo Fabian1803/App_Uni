@@ -39,4 +39,29 @@
         android:name="com.example.appuni.ui.SplashScreen.Splash"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" />
+
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.example.appuni.ui.chat.search_user"
+        android:label="Buscar Usuario"
+        tools:layout="@layout/fragment_search_user" />
+    <fragment
+        android:id="@+id/chatPanel"
+        android:name="com.example.appuni.ui.chat.ChatPanel"
+        android:label="fragment_chat_panel"
+        tools:layout="@layout/fragment_chat_panel" />
+    <fragment
+        android:id="@+id/coursePanel"
+        android:name="com.example.appuni.ui.home.CoursePanel"
+        android:label="fragment_course_panel"
+        tools:layout="@layout/fragment_course_panel" />
+    <activity
+        android:id="@+id/passwordRecovery"
+        android:name="com.example.appuni.ui.login.PasswordRecovery"
+        android:label="PasswordRecovery" />
+    <activity
+        android:id="@+id/codeVerify"
+        android:name="com.example.appuni.ui.login.CodeVerify"
+        android:label="CodeVerify" />
+
 </navigation>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4D1C2E63"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
@@ -42,7 +43,8 @@
 
     <ScrollView
         android:layout_width="412dp"
-        android:layout_height="599dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.82"
         android:layout_marginTop="8dp"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,47 +53,13 @@
         app:layout_constraintTop_toBottomOf="@+id/divider2">
 
         <LinearLayout
+            android:id="@+id/courseLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
             app:cardElevation="8dp"
             android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@mipmap/curs" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="25dp"
-                android:text="Nombreb de curso"
-                android:textColor="#1C2E63"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="Aula"
-                android:textColor="#1C2E63"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="25dp"
-                android:text="Nombre de profesor"
-                android:textColor="#1C2E63"
-                android:textSize="14sp" />
 
         </LinearLayout>
     </ScrollView>
